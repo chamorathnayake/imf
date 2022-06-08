@@ -1,0 +1,28 @@
+<?php
+
+$connection = mysqli_connect("localhost","root","");
+$db = mysqli_select_db($connection, 'imf');
+
+if(isset($_POST['insertdata']))
+{
+  $dat = $_POST['dat'];
+  $subject = $_POST['subject'];
+  $grade = $_POST['grade'];
+  $term = $_POST['term'];
+  $pdf = $_POST['pdf'];
+
+    $query = "INSERT INTO module(`dat`,`subject`,`grade`,`term`,`pdf`) VALUES ('$dat','$subject','$grade','$term','$pdf')";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        echo '<script> alert("Data Saved"); </script>';
+        header('Location: add_module1.php');
+    }
+    else
+    {
+        echo '<script> alert("Data Not Saved"); </script>';
+    }
+}
+
+?>
