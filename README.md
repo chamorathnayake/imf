@@ -2,7 +2,7 @@
 information management system for gampola zonal department
 
 
-email
+email to log system
 
 T1998rathnayake@gmail.com
 
